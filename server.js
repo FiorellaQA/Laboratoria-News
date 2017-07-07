@@ -8,7 +8,7 @@ app.get('/api/news/', function (req, res) {
 	news.then( (result) => {
 		console.log('Obteniendo noticias\nCantidad de Resultado:' +result.length);
 	res.status(200).json(result);
-});
+	});
 });
 
 app.get('/api/news/:news_id', function (req, res) {
@@ -38,13 +38,14 @@ app.get('/api/categories/:category_id', function (req, res) {
 });
 });
 
+
+//aquí le decimos que use los archivos estáticos y que se muestren al llamar a la ruta '/'
 app.use('/', express.static('public'));
 
-
-app.listen(process.env.PORT || 3000, () => {
-	console.log("Iniciando en puerto 3000");
+//aquí le decimos al framework desde que puerto
+app.listen(3000,() => {
+	console.log("Listening on 3000");
 });
-
 
 
 

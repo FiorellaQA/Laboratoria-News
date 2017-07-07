@@ -5,7 +5,7 @@ function Pantalla1 () {
 	var estado = state.categories;
 
 	estado.forEach(function (element) {
-		var p = $('<p>' + element.title + '</p>');
+		var p = $('<section>' + element.title + '</section>');
 		contenedorGeneral.append(p);
 	});
 
