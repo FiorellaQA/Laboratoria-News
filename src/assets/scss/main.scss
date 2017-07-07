@@ -1,0 +1,125 @@
+@import "_variables";
+@import "_mixins";
+
+*{
+  margin:0;
+  padding: 0;
+  @include border-box;
+}
+
+header
+{
+  height: 70px;
+  background-color: $primary-light;
+  color: $text-color;
+  line-height: 70px;
+}
+.content-aside{
+  padding: 10px;
+  text-align: center;
+  color: $text-color;
+  background-color: $secondary-dark;
+  margin-bottom: 10px;
+  h2{
+    font-size: 19px;
+  }
+  p{
+    font-size: 14px;
+  }
+}
+
+footer{
+  color: $text-color;
+  background-color: $secondary-dark;
+  .center{
+    text-align: center;
+  }
+}
+
+/*
+* Grid System
+*/
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  .item{
+    padding: 5px;
+    margin-bottom: 4px;
+    color: $text-color;
+    background-color: $secondary-dark;
+  }
+  .item-active{
+    padding: 5px;
+    margin-bottom: 4px;
+    color: $text-color;
+    background-color: $primary-light;
+  }
+}
+table{
+  width: 100%;
+  @include box-shadow;
+  th{
+    background-color: gray;
+  }
+}
+
+%clearfix
+{
+  *zoom: 1;
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.wrapper, .row {
+  @extend %clearfix;
+}
+
+[class*='col-'] {
+  float: left;
+  padding: 1em;
+  width: 100%;
+  min-height: 1px;
+}
+
+@media #{$breakpoint-small} {
+  .wrapper {
+    width: 95%;
+    max-width: $grid-max-width;
+  }
+  @for $i from 1 through $grid-columns {
+    .col-sm-#{$i} {
+      width: 100% / $grid-columns * $i;
+    }
+  }
+}
+
+@media #{$breakpoint-medium} {
+  .wrapper {
+    width: 95%;
+    max-width: $grid-max-width;
+  }
+  @for $i from 1 through $grid-columns {
+    .col-md-#{$i} {
+      width: 100% / $grid-columns * $i;
+    }
+  }
+}
+
+@media #{$breakpoint-large} {
+  .wrapper {
+    width: 95%;
+    max-width: $grid-max-width;
+  }
+  @for $i from 1 through $grid-columns {
+    .col-lg-#{$i} {
+      width: 100% / $grid-columns * $i;
+    }
+  }
+}
