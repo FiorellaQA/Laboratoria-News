@@ -8,6 +8,6 @@ $text-color: #FFF !default;
 
 
 // breakpoints
-$breakpoint-small: "only screen and (min-width: 768px)";
-$breakpoint-medium: "only screen and (min-width: 992px)";
-$breakpoint-large: "only screen and (min-width: 1200px)";
+$breakpoint-small: "(min-width: 767px)";
+$breakpoint-medium: "(min-width: 992px)";
+$breakpoint-large: "(min-width: 1200px)";

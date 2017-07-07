@@ -6,6 +6,65 @@
   padding: 0;
   @include border-box;
 }
+html,
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.contenidoFlexibo{
+  display: none;
+}
+
+hr{
+  display: none;
+}
+
+.listarow > li{
+    float: left;
+}
+
+.listarow > li{
+  float: left;
+}
+.listLeft > li >a{
+  position: relative;
+  display: inline-block;
+  padding: 10px 15px;
+}
+
+.navbar-default{
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.navbarFlex{
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .navheaderFlex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+  }
+}
+
+.navbar-brand{
+  height: 68px !important;
+  .logoLab{
+    width: 250px;
+    .logoLab__img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+.description{
+  display: none;
+}
+
+
 
 header
 {
@@ -122,4 +181,49 @@ table{
       width: 100% / $grid-columns * $i;
     }
   }
+  .contenidoFlexibo{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+  }
+
+  .description{
+    padding-top: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 15px;
+    .description__img{
+      height: 16px;
+      padding: 0 3px;
+    }
+  }
+
+  .navheaderFlex{
+    height: 127px;
+  }
+
+  .navbar-brand {
+    height: 127px;
+    .logoLab {
+      height: 50px;
+      width: 315px;
+    }
+  }
+  .collapse{
+    padding-top: 17px !important;
+  }
+
+
+
 }

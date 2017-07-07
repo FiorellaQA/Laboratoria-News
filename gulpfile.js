@@ -61,23 +61,23 @@ gulp.task("js", function() {
 });
 
 gulp.task("sass-watch", ["sass"], function (done) {
-    browserSync.reload();
-    done();
+   // browserSync.reload();
+    //done();
 });
 
 gulp.task("js-watch", ["js"], function (done) {
-    browserSync.reload();
-    done();
+    //browserSync.reload();
+   // done();
 });
 
 gulp.task("html-watch", ["html"], function (done) {
-    browserSync.reload();
-    done();
+    //browserSync.reload();
+    //done();
 });
 
 gulp.task("img-watch", ["img"], function (done) {
-	browserSync.reload();
-	done();
+	//browserSync.reload();
+//	done();
 });
 
 gulp.task("serve", function() {
@@ -93,4 +93,4 @@ gulp.task("serve", function() {
 	gulp.watch(sources.img, ["img-watch"]);
 });
 
-gulp.task('run', ['html-watch', 'js-watch', 'sass-watch','img-watch','serve']);
+gulp.task('run', ['html-watch', 'js-watch', 'sass-watch','img-watch']);
