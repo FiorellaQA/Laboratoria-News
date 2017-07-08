@@ -11,6 +11,12 @@ body{
   font-family: 'Montserrat', sans-serif;
 }
 
+@for $i from 1 through 4 {
+  .bg-img-#{$i}{
+    background-image: url("assets/img/foto$i.png");
+  }
+}
+
 .contenidoFlexibo{
   display: none;
 }

@@ -2,12 +2,25 @@
 'use strict';
 
 function Pantalla1 () {
-	var contenedorGeneral = $('<div></div>');
-	var estado = state.categories;
+	var contenedorGeneral = $('<section></section>');
+	var estado = state.new;
+	var index = 0;
+	estado.forEach(function (element) {
+		index++;
+		var article = $('<article class="bg-img-${index}"></article>');
+		//article.css("background-image","../img/foto${index}.png)");
+		var title = $('<h4>' + element.title + '</h4>');
+		//var img = $(`<img class="img-responsive" src="assets/img/foto${index}.png" alt="${element.img}" style="width: 100%">`);
 
-estado.forEach(function (element) {
-		var p = $('<p>' + element.title + '</p>');
-		contenedorGeneral.append(p);
+		article.append(title);
+		//article.append(img);
+
+		if(element.brief != undefined) {
+			var brief = $('<p>' + element.brief + '</p>');
+			article.append(brief);
+		}
+
+		contenedorGeneral.append(article);
 	});
 
 
@@ -99,12 +112,13 @@ var state = {
 };
 
 $(function() {
-		$.get('/api/categories/',function(data){
+		$.get('/api/news/',function(data){
 		const root =$('#root');
-		state.categories = data;
+		state.new = data;
 		render(root);
 		console.log(data);
 	});
+
 	/*
 	$.get('http://localhost:3000/api/news/',function(error, data){
 		const root =$('#root');

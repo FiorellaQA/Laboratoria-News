@@ -11,12 +11,13 @@ var state = {
 };
 
 $(function() {
-		$.get('/api/categories/',function(data){
+		$.get('/api/news/',function(data){
 		const root =$('#root');
-		state.categories = data;
+		state.new = data;
 		render(root);
 		console.log(data);
 	});
+
 	/*
 	$.get('http://localhost:3000/api/news/',function(error, data){
 		const root =$('#root');
