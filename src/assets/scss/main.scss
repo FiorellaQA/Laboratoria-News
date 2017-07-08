@@ -10,11 +10,81 @@ html,
 body{
   font-family: 'Montserrat', sans-serif;
 }
-
-@for $i from 1 through 4 {
+article{
+  padding: 10px 29px;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+@for $i from 1 through 32 {
   .bg-img-#{$i}{
-    background-image: url("assets/img/foto$i.png");
+    background-image: url("../img/foto#{$i}.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    @if $i == 1 {
+      height: 335px;
+      border-bottom: 19px solid white;
+    } @else if $i == 2 {
+      height: 273px;
+      @extend .col-md-6;
+      @extend .col-personalizado;
+    } @else if $i == 3 {
+      height: 273px;
+      border-left: 19px solid white;
+      border-right: 19px solid white;
+      @extend .col-md-3;
+      @extend .col-personalizado;
+    } @else if $i == 4 {
+      height: 273px;
+      @extend .col-md-3;
+      @extend .col-personalizado;
+    } @else if $i == 5 {
+      height: 450px;
+      @extend .col-md-3;
+      @extend .col-personalizado;
+    }@else if $i == 6 {
+      height: 150px;
+      @extend .col-md-6;
+      @extend .col-personalizado;
+    }@else if $i == 7 {
+      height: 150px;
+      @extend .col-md-6;
+      @extend .col-personalizado;
+    }@else if $i == 8 {
+      height: 150px;
+      @extend .col-md-6;
+      @extend .col-personalizado;
+    }@else if $i == 9 {
+      height: 450px;
+      @extend .col-md-3;
+      @extend .col-personalizado;
+    }@else if $i == 10 {
+      height: 200px;
+      @extend .col-md-3;
+      @extend .col-personalizado;
+    }@else if $i == 11 {
+      height: 200px;
+      @extend .col-md-3;
+      @extend .col-personalizado;
+    }@else if $i == 12 {
+      height: 200px;
+      @extend .col-md-3;
+      @extend .col-personalizado;
+    }@else if $i == 13 {
+      height: 200px;
+      @extend .col-md-3;
+      @extend .col-personalizado;
+    }
   }
+
+}
+
+.col-personalizado {
+  float: left;
+  padding: 1em;
+  width: 100%;
+  min-height: 1px;
 }
 
 .contenidoFlexibo{
@@ -144,13 +214,6 @@ table{
 
 .wrapper, .row {
   @extend %clearfix;
-}
-
-[class*='col-'] {
-  float: left;
-  padding: 1em;
-  width: 100%;
-  min-height: 1px;
 }
 
 @media #{$breakpoint-small} {
